@@ -1,0 +1,57 @@
+
+
+button {
+    background-color: #eee;
+    margin: 100px auto;
+    padding:10px 20px;
+    display: block;
+    font-size: 40px;
+    border: none;
+    position: relative;
+    cursor: pointer;
+    overflow: hidden;
+}
+button:focus {
+    outline: none;
+}
+button span {
+    background-color: grey;
+    color:white;
+    position: absolute;
+    left:50%;
+    transform: translateX(-50%);
+    min-width: 260px;
+    font-size: 18px;
+    padding:10px 15px;
+    top:-60px;
+    transition: .5s;
+    opacity: 0;
+}
+button span::before {
+    content: "";
+    position: absolute;
+    border-color: grey transparent transparent transparent;
+    border-width: 10px;
+    border-style: solid;
+    left:50%;
+    transform: translateX(-50%);
+    bottom:-20px;
+}
+button:hover {
+    overflow: visible;
+}
+button:hover span {
+    opacity: 1;
+}
+
+
+
+[data-position="bottom"] span {
+    top: auto;
+    bottom: -60px;
+}
+[data-position="bottom"] span::before {
+    bottom: auto;
+    top:-20px;
+    border-color: transparent transparent grey transparent;
+}
